@@ -9,11 +9,6 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %AScriptDir%  ; Ensures a consistent starting directory.	
 #Hotstring C R	
 
-pers = %A_WorkingDir%\persoonlijk.ahk
-
-if FileExist(pers) {
-run, %A_WorkingDir%\persoonlijk.ahk
-}
 	
 ; Start up GUI{
 
@@ -21,9 +16,7 @@ run, %A_WorkingDir%\persoonlijk.ahk
 Multiticket()
 return
 
-::;startup::
-run, C:\Users\%A_UserName%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
-return
+
 
 Multiticket(){
 Gui, Destroy
@@ -36,11 +29,7 @@ Gui, Add, Button, gMultiNP, NP
 Gui, Add, Button, gVadeSpam, Spamcause zoeken in putty
 Gui, Show
 }
-; }
-;Spamcause zoeken
-::;vadespam::
-vadespam()
-return
+
 
 vadespam(){
 Gui, Destroy
@@ -58,9 +47,6 @@ Gui, Show
 }
 
 Copyspam:
-;GuiControlGet, id
-;GuiControlGet, datum
-;GuiControlGet, tijd
 Gui, Submit, NoHide ;betere manier dan control get
 stringspam =
 (
@@ -68,11 +54,9 @@ zgrep id=%id% */applications-%datum%%tijd%00*
 )
 clipboard = %stringspam%
 return
-; }
+
 Copyspam2:
-;GuiControlGet, id
-;GuiControlGet, datum
-;GuiControlGet, tijd
+
 Gui, Submit, NoHide ;betere manier dan control get
 stringspam2 =
 (
@@ -80,7 +64,6 @@ zgrep id=%id% */messages-%datum%%tijd%00*
 )
 clipboard = %stringspam2%
 return
-; }
 
 
 ; Cafe tickets GUI{
@@ -98,16 +81,13 @@ Gui, Show
 }
 ; }
 
-; Cafe tickets scripts{
+; Cafe tickets scripts
 	
-; Order script{
-::;order::
-order()
-return
+; Order script
+
 
 order(){
 Gui, Destroy
-;Gui, Add, Edit, vcoos,
 Gui, Add, Checkbox,vcoos, COOS?
 Gui, add, Text,, Problem:
 Gui, Add, Edit, vorder,
@@ -131,7 +111,6 @@ Gui, Show
 
 Copymob:
 Gui, Submit, NoHide
-FileDelete, %A_WorkingDir%\Test.txt
 
 if (coos = 1)
 { 
@@ -163,11 +142,8 @@ TBO
 )
 clipboard = %stringmob%
 return
-; }
-; Creation script{
-::;creation::
-creation()
-return
+
+; Creation script
 
 creation(){
 Gui, Destroy
@@ -193,15 +169,7 @@ Gui, Show
 }
 
 Copymob1:
-GuiControlGet, coos
-GuiControlGet, order
-GuiControlGet, cmr
-GuiControlGet, stat
-GuiControlGet, case
-GuiControlGet, netcracker
-GuiControlGet, steps
-GuiControlGet, error
-FileDelete, %A_WorkingDir%\Test.txt
+Gui, Submit, NoHide
 
 ifEqual, coos, COOS
 coos = / COOS
@@ -227,13 +195,10 @@ TBO
 
 clipboard = %stringmob1%
 return
-; }
 
 
-; Overname script{
-::;overname::
-overname()
-return
+
+; Overname script
 
 overname(){
 Gui, Destroy
@@ -265,18 +230,7 @@ Gui, Show
 }
 
 Copytake:
-GuiControlGet, coos
-GuiControlGet, ostat
-GuiControlGet, pstat
-GuiControlGet, error
-GuiControlGet, ocmr
-GuiControlGet, ncmr
-GuiControlGet, case
-GuiControlGet, bba
-GuiControlGet, identity
-GuiControlGet, household
-GuiControlGet, tvott
-FileDelete, %A_WorkingDir%\Test.txt
+Gui, Submit, NoHide
 
 ifEqual, coos, COOS
 coos = / COOS
@@ -310,13 +264,10 @@ TBO
 clipboard = %stringmob%
 return
 
-;}
+
 
 ; Mijntelenet tickets script{
-; Telenet - cafe{
-::;telenet::
-telenet()
-return
+
 
 telenet(){
 Gui, Destroy
@@ -340,14 +291,7 @@ Gui, Show
 }
 
 Copymnp:
-GuiControlGet, mcoos
-GuiControlGet, mproblem
-GuiControlGet, mcmr
-GuiControlGet, mlogin
-GuiControlGet, mcaseid
-GuiControlGet, msteps
-GuiControlGet, merr
-FileDelete, %A_WorkingDir%\Test.txt
+Gui, Submit, NoHide
 
 ifEqual, mcoos, COOS
 mcoos = / COOS
@@ -372,24 +316,24 @@ Kind Regards TBO
 
 clipboard = %stringmnp%
 return
-; }
 
 
-; general code{
+
+; general code
 Close:
 Gui, Destroy
 Return
 
-;}
-
-
-
-;}
 
 
 
 
-; SMS tickets GUI{
+
+
+
+
+
+; SMS tickets GUI
 MultiSMS(){
 Gui, Destroy
 Gui, add, Text,, Alle SMS:
@@ -400,9 +344,9 @@ Gui, Add, Button, gsmsTelefonie, Vaste telefoon
 Gui, Add, Button, gMultiticket, Ga terug
 Gui, Show
 }
-;}
 
-; Algemeen tickets GUI{
+
+; Algemeen tickets GUI
 smsalgemeen(){
 Gui, Destroy
 Gui, add, Text,, Alle algemene sms:
@@ -415,11 +359,12 @@ Gui, Add,Button, gLoginOk, Aanmelden terug ok
 Gui, Add, Button, gMultiSMS, Ga terug
 Gui, Show
 }
-; }
 
-; Algemeen tickets scripts{
+
+; Algemeen tickets scripts
 
 ; Login OK script
+
 LoginOK(){
 Gui, Destroy
 Gui, Add, Text,, Welke Service?(mijn telenet, Yelo Tv, webmail...)
@@ -444,9 +389,6 @@ clipboard = %stringlog%
 return
 
 ; IT ticket script
-::;itticket::
-itticket()
-return
 
 itticket(){
 Gui, Destroy
@@ -457,7 +399,6 @@ Gui, Show
 }
 
 copyit:
-FileDelete, %A_WorkingDir%\Test.txt
 stringit =
 (
 Telenet info:
@@ -485,10 +426,7 @@ Telenet
 clipboard = %stringitupdate%
 return
 
-; repaircallback script{
-::;repcallback::
-repaircallback()
-return
+; repaircallback script
 
 repaircallback(){
 Gui, Destroy
@@ -513,12 +451,8 @@ Telenet
 clipboard = %stringrepcall%
 return
 
-;}
 
-; callback script{
-::;callback::
-callback()
-return
+; callback script
 
 callback(){
 Gui, Destroy
@@ -543,12 +477,9 @@ Telenet
 clipboard = %stringmob%
 return
 
-;}
 
-; modemactivate script{
-::;modemactivate::
-modemactivate()
-return
+
+; modemactivate script
 
 modemactivate(){
 Gui, Destroy
@@ -575,12 +506,9 @@ Telenet
 clipboard = %stringmodem%
 return
 
-;}
 
-; pakketaanpassing script{
-::;pakketaanpassing::
-pakketaanpassing()
-return
+
+; pakketaanpassing script
 
 pakketaanpassing(){
 Gui, Destroy
@@ -592,7 +520,7 @@ Gui, Show
 }
 
 Copypakketaanpassing:
-GuiControlGet, pakket
+Gui, Submit, NoHide
 stringpkkt = 
 (
 Beste klant,
@@ -605,12 +533,10 @@ Telenet
 clipboard = %stringpkkt%
 return
 
-;}
-
-;}
 
 
-; Internet tickets GUI{
+
+; Internet tickets GUI
 Internetcafe(){
 Gui, Destroy
 Gui, add, Text,, Alle internet sms:
@@ -621,14 +547,11 @@ Gui, Add, Button, gpid, PID aangemaakt
 Gui, Add, Button, gMultiSMS, Ga terug
 Gui, Show
 }
-; }
 
-; Internet tickets scripts{
 
-; reset script{
-::;reset::
-reset()
-return
+; Internet tickets scripts
+
+; reset script
 
 reset(){
 Gui, Destroy
@@ -640,7 +563,7 @@ Gui, Show
 }
 
 Copyreset:
-GuiControlGet, wachtwoord
+Gui, Submit, NoHide
 stringresetwachtwoord = 
 (
 Beste klant,
@@ -654,12 +577,9 @@ Telenet
 clipboard = %stringresetwachtwoord%
 return
 
-;}
 
-; email extended script{
-::;emailextended::
-emailextended()
-return
+
+; email extended script
 
 emailextended(){
 Gui, Destroy
@@ -671,7 +591,7 @@ Gui, Show
 }
 
 Copyemailextended:
-GuiControlGet, emailalias
+Gui, Submit, NoHide
 stringemailextended = 
 (
 Beste klant, 
@@ -685,8 +605,6 @@ Telenet
 )
 clipboard = %stringemailextended%
 return
-
-;}
 
 ; email mailprogramma issue script{
 ::;emailprogramma::

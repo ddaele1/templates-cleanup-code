@@ -606,10 +606,7 @@ Telenet
 clipboard = %stringemailextended%
 return
 
-; email mailprogramma issue script{
-::;emailprogramma::
-emailprogramma()
-return
+; email mailprogramma issue script
 
 emailprogramma(){
 Gui, Destroy
@@ -619,8 +616,7 @@ Gui, Show
 }
 
 Copyemailprogramma:
-GuiControlGet, emailprogramma
-FileDelete, %A_WorkingDir%\Test.txt
+Gui, Submit, NoHide
 stringemailprogrammas = 
 (
 Beste,
@@ -634,12 +630,8 @@ Telenet
 clipboard = %stringemailprogrammas%
 return
 
-;}
 
-; persoonlijke login aanmaken script{
-::;pid::
-pid()
-return
+; persoonlijke login aanmaken script
 
 pid(){
 Gui, Destroy
@@ -651,7 +643,7 @@ Gui, Show
 }
 
 Copypid:
-GuiControlGet, persoonlijkelogin
+Gui, Submit, NoHide
 stringPIDaanmaken = 
 (
 Beste klant,
@@ -667,11 +659,11 @@ Telenet
 clipboard = %stringPIDaanmaken%
 return
 
-;}
 
 
 
-; DTV tickets GUI{
+
+; DTV tickets GUI
 smsDTV(){
 Gui, Destroy
 Gui, add, Text,, Alle DTV sms:
@@ -680,14 +672,10 @@ Gui, Add, Button, gzenderpakketactivatie, zenderpakket geactiveerd
 Gui, Add, Button, gMultiSMS, Ga terug
 Gui, Show
 }
-; }
 
-; DTV tickets scripts{
 
-; yelo registratie script{
-::;yeloregistratie::
-yeloregistratie()
-return
+; DTV tickets scripts
+; yelo registratie script
 
 yeloregistratie(){
 Gui, Destroy
@@ -699,7 +687,7 @@ Gui, Show
 }
 
 Copyyeloregistratie:
-GuiControlGet, yeloregistratie
+Gui, Submit, NoHide
 stringyeloregistraties = 
 (
 Beste, 
@@ -714,12 +702,9 @@ Telenet
 clipboard = %stringyeloregistraties%
 return
 
-;}
 
-; zenderpakketactivatie script{
-::;zenderpakketactivatie::
-zenderpakketactivatie()
-return
+
+; zenderpakketactivatie script
 
 zenderpakketactivatie(){
 Gui, Destroy
@@ -731,7 +716,7 @@ Gui, Show
 }
 
 Copyzenderpakketactivatie:
-GuiControlGet, zenderpakket
+Gui, Submit, NoHide
 stringzndrpakket = 
 (
 Beste klant,
@@ -747,10 +732,11 @@ Telenet
 clipboard = %stringzndrpakket%
 return
 
-;}
 
 
-; Telefonie tickets GUI{
+
+; Telefonie tickets GUI
+
 smsTelefonie(){
 Gui, Destroy
 Gui, add, Text,, Alle Telefonie sms:
@@ -759,15 +745,13 @@ Gui, Add, Button, gtelefoonovername, overname documenten voor vaste lijn
 Gui, Add, Button, gMultiSMS, Ga terug
 Gui, Show
 }
-; }
 
-; Telefonie tickets scripts{
+
+; Telefonie tickets scripts
 	
 
-; telefoonactief script{
-::;telefoonactief::
-telefoonactief()
-return
+; telefoonactief script
+
 
 telefoonactief(){
 Gui, Destroy
@@ -779,7 +763,7 @@ Gui, Show
 }
 
 Copytelefoonactief:
-GuiControlGet, telefoonnummer
+Gui, Submit, NoHide
 stringtelefoonnr = 
 (
 Beste klant, 
@@ -793,14 +777,10 @@ Telenet
 clipboard = %stringtelefoonnr%
 return
 
-;}
 
 
 
-; telefoonovername script{
-::;telefoonovername::
-telefoonovername()
-return
+; telefoonovername script
 
 telefoonovername(){
 Gui, Destroy
@@ -812,7 +792,7 @@ Gui, Show
 }
 
 Copytelefoonovername:
-GuiControlGet, telefoonnummerov
+Gui, Submit, NoHide
 stringtelov = 
 (
 Beste klant,
@@ -826,9 +806,9 @@ Telenet
 clipboard = %stringtelov%
 return
 
-;}
 
-; case template GUI{
+; case template GUI
+
 MultiCase(){
 Gui, Destroy
 Gui, add, Text,, Case template
@@ -840,14 +820,11 @@ Gui, Add, Button, gsubdtv, Subcase dtv
 Gui, Add, Button, gMultiticket, Ga terug
 Gui, Show
 }
-; }
 
-; Subcase Templates{
+
+; Subcase Templates
 
 ;case template
-::;casetvapptemplate::
-casetvapptemplate()
-return
 
 casetvapptemplate(){
 Gui, Destroy
@@ -876,9 +853,6 @@ return
 
 
 ;case template
-::;casetemplate::
-casetemplate()
-return
 
 casetemplate(){
 Gui, Destroy
@@ -903,9 +877,7 @@ Return
 
 
 CopyCaseTemplate:
-GuiControlGet, Tissue
-GuiControlGet, Staken
-GuiControlGet, ConclusionCase
+Gui, Submit, NoHide
 
 stringCaseTemplate = 
 (
@@ -920,13 +892,10 @@ Conclusion / communication :
 )
 clipboard = %stringCaseTemplate%
 return
-; }
 
 
-; sub case internalional script{
-::;subinternational::
-subinternational()
-return
+
+; sub case internalional script
 
 subinternational(){
 Gui, Destroy
@@ -955,16 +924,7 @@ Gui, Show
 }
 
 Copyinternalsub:
-GuiControlGet, country
-GuiControlGet, voorbeeldnr1
-GuiControlGet, voorbeeldnr2
-GuiControlGet, voorbeeldnr3
-GuiControlGet, dateintersub
-GuiControlGet, messagesubinter
-GuiControlGet, telfixsubinter
-GuiControlGet, telproxsubinter
-GuiControlGet, extrasubinter
-
+Gui, Submit, NoHide
 
 stringinternalsub = 
 (
@@ -991,12 +951,9 @@ Can you please check?
 )
 clipboard = %stringinternalsub%
 return
-; }
 
-; subcase dtv{
-::;subdtv::
-subdtv()
-return
+
+; subcase dtv
 
 subdtv(){
 Gui, Destroy
@@ -1033,18 +990,7 @@ Gui, Show
 }
 
 Copysubdtvalgeem:
-GuiControlGet, subdtvsummary
-GuiControlGet, subdtvsummary1
-GuiControlGet, subdtvplatform
-GuiControlGet, subdtvassets
-GuiControlGet, subdtvdevices
-GuiControlGet, subdtvdeviceinfo
-GuiControlGet, subdtvlocation
-GuiControlGet, subdtvtimesocc
-GuiControlGet, subdtvlogging
-GuiControlGet, subdtvrepoducible
-GuiControlGet, subdtvscreenshot
-GuiControlGet, subdtvcustomerdata
+Gui, Submit, NoHide
 
 
 stringsubdtvalgeem = 
@@ -1076,12 +1022,12 @@ Individual Customer data:
 )
 clipboard = %stringsubdtvalgeem%
 return
-; }
 
 
-;}
 
-; NP GUI{
+
+
+; NP GUI
 MultiNP(){
 Gui, Destroy
 Gui, add, Text,, Alle NP Templates:
@@ -1097,14 +1043,11 @@ Gui, Add, Button, gLOAFR, Letter of agreement FR
 Gui, Add, Button, gMultiticket, Ga terug
 Gui, Show
 }
-; }
-; NP template{
+
+; NP template
 
 
-; Rejectgrouping{
-::;Rejectgrouping::
-Rejectgrouping()
-return
+; Rejectgrouping
 
 Rejectgrouping(){
 Gui, Destroy
@@ -1118,8 +1061,7 @@ Gui, Show
 }
 
 CopyRejectNP:
-GuiControlGet, Nummer1
-GuiControlGet, Nummer2
+Gui, Submit, NoHide
 
 stringRejectNP =
 (
@@ -1152,12 +1094,9 @@ Let op! Je mag de nummer niet inboeken om achteraf op te zeggen!!! Dit geeft pro
 )
 clipboard = %stringRejectNP%
 return
-; }
 
-; Rejectadrescheck{
-::;Rejectadrescheck::
-Rejectadrescheck()
-return
+
+; Rejectadrescheck
 
 Rejectadrescheck(){
 Gui, Destroy
@@ -1177,12 +1116,7 @@ Gui, Show
 }
 
 CopyRejectadres:
-GuiControlGet, Telefoonnummeradres
-GuiControlGet, naamadres1
-GuiControlGet, Adres1
-GuiControlGet, naamadres2
-GuiControlGet, Adres2
-GuiControlGet, Adres1
+Gui, Submit, NoHide
 
 stringRejectadres =
 (
@@ -1230,13 +1164,10 @@ Wij proberen de klant opnieuw te contacteren op (datum). Indien we de klant nog 
 )
 clipboard = %stringRejectadres%
 return
-; }
 
 
-; Duedatenew{
-::;Duedatenew::
-Duedatenew()
-return
+
+; Duedatenew
 
 Duedatenew(){
 Gui, Destroy
@@ -1250,8 +1181,7 @@ Gui, Show
 }
 
 Copyddnew:
-GuiControlGet, Telefoonnummerddnew
-GuiControlGet, Duedatenew
+Gui, Submit, NoHide
 
 stringddnew =
 (
@@ -1276,12 +1206,9 @@ Due Date = %Duedatenew%
 )
 clipboard = %stringddnew%
 return
-; }
 
-; Duedateaccept{
-::;Duedateaccept::
-Duedateaccept()
-return
+
+; Duedateaccept
 
 Duedateaccept(){
 Gui, Destroy
@@ -1297,9 +1224,7 @@ Gui, Show
 }
 
 Copyddaccept:
-GuiControlGet, Telefoonnummerddaccept
-GuiControlGet, npstatusaccept
-GuicontrolGet, Duedateaccept
+Gui, Submit, NoHide
 
 stringddaccept =
 (
@@ -1318,12 +1243,9 @@ Due Date = %Duedateaccept%
 )
 clipboard = %stringddaccept%
 return
-; }
 
-; Duedateexec{
-::;Duedateexec::
-Duedateexec()
-return
+
+; Duedateexec
 
 Duedateexec(){
 Gui, Destroy
@@ -1348,7 +1270,6 @@ Van zodra de status op RFS sent staat, is de nummerportering volledig afgehandel
 )
 clipboard = %stringddexec%
 return
-; }
 
 ; LOANL{
 ::;LOANL::

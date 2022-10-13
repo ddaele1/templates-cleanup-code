@@ -17,7 +17,6 @@ Multiticket()
 return
 
 
-
 Multiticket(){
 Gui, Destroy
 Gui, add, Text,, Wat heb je nodig?
@@ -66,7 +65,8 @@ clipboard = %stringspam2%
 return
 
 
-; Cafe tickets GUI{
+; Cafe tickets GUI
+
 Multicafe(){
 Gui, Destroy
 Gui, add, Text,, Alle cafe tickets:
@@ -79,12 +79,12 @@ Gui, Add, Button, gMultiticket, Ga terug
 
 Gui, Show
 }
-; }
+
 
 ; Cafe tickets scripts
+
 	
 ; Order script
-
 
 order(){
 Gui, Destroy
@@ -143,6 +143,7 @@ TBO
 clipboard = %stringmob%
 return
 
+
 ; Creation script
 
 creation(){
@@ -195,7 +196,6 @@ TBO
 
 clipboard = %stringmob1%
 return
-
 
 
 ; Overname script
@@ -265,9 +265,7 @@ clipboard = %stringmob%
 return
 
 
-
 ; Mijntelenet tickets script{
-
 
 telenet(){
 Gui, Destroy
@@ -318,22 +316,15 @@ clipboard = %stringmnp%
 return
 
 
-
 ; general code
+
 Close:
 Gui, Destroy
 Return
 
 
-
-
-
-
-
-
-
-
 ; SMS tickets GUI
+
 MultiSMS(){
 Gui, Destroy
 Gui, add, Text,, Alle SMS:
@@ -347,6 +338,7 @@ Gui, Show
 
 
 ; Algemeen tickets GUI
+
 smsalgemeen(){
 Gui, Destroy
 Gui, add, Text,, Alle algemene sms:
@@ -362,6 +354,7 @@ Gui, Show
 
 
 ; Algemeen tickets scripts
+
 
 ; Login OK script
 
@@ -387,6 +380,7 @@ Telenet
 )
 clipboard = %stringlog%
 return
+
 
 ; IT ticket script
 
@@ -438,7 +432,7 @@ Gui, Show
 }
 
 Repcopycallback:
-GuiControlGet, repdienst
+Gui, Submit, NoHide
 stringrepcall = 
 (
 Beste klant,
@@ -464,7 +458,7 @@ Gui, Show
 }
 
 Copycallback:
-GuiControlGet, acaseid
+Gui, Submit, NoHide
 stringmob = 
 (
 Beste klant,
@@ -476,7 +470,6 @@ Telenet
 )
 clipboard = %stringmob%
 return
-
 
 
 ; modemactivate script
@@ -491,7 +484,6 @@ Gui, Show
 }
 
 Copymodemactivate:
-; GuiControlGet, modemmac
 Gui, Submit, NoHide ;betere manier dan control get
 stringmodem = 
 (
@@ -505,7 +497,6 @@ Telenet
 )
 clipboard = %stringmodem%
 return
-
 
 
 ; pakketaanpassing script
@@ -534,9 +525,8 @@ clipboard = %stringpkkt%
 return
 
 
-
-
 ; Internet tickets GUI
+
 Internetcafe(){
 Gui, Destroy
 Gui, add, Text,, Alle internet sms:
@@ -550,6 +540,7 @@ Gui, Show
 
 
 ; Internet tickets scripts
+
 
 ; reset script
 
@@ -578,7 +569,6 @@ clipboard = %stringresetwachtwoord%
 return
 
 
-
 ; email extended script
 
 emailextended(){
@@ -605,6 +595,7 @@ Telenet
 )
 clipboard = %stringemailextended%
 return
+
 
 ; email mailprogramma issue script
 
@@ -660,10 +651,8 @@ clipboard = %stringPIDaanmaken%
 return
 
 
-
-
-
 ; DTV tickets GUI
+
 smsDTV(){
 Gui, Destroy
 Gui, add, Text,, Alle DTV sms:
@@ -675,6 +664,8 @@ Gui, Show
 
 
 ; DTV tickets scripts
+
+
 ; yelo registratie script
 
 yeloregistratie(){
@@ -701,7 +692,6 @@ Telenet
 )
 clipboard = %stringyeloregistraties%
 return
-
 
 
 ; zenderpakketactivatie script
@@ -733,8 +723,6 @@ clipboard = %stringzndrpakket%
 return
 
 
-
-
 ; Telefonie tickets GUI
 
 smsTelefonie(){
@@ -751,7 +739,6 @@ Gui, Show
 	
 
 ; telefoonactief script
-
 
 telefoonactief(){
 Gui, Destroy
@@ -776,8 +763,6 @@ Telenet
 )
 clipboard = %stringtelefoonnr%
 return
-
-
 
 
 ; telefoonovername script
@@ -824,6 +809,7 @@ Gui, Show
 
 ; Subcase Templates
 
+
 ;case template
 
 casetvapptemplate(){
@@ -849,7 +835,6 @@ Korte omschrijving van het probleem: (vb. geen beeld, slecht beeld, constante st
 )
 clipboard = %stringTvAppTemplate%
 return
-
 
 
 ;case template
@@ -892,7 +877,6 @@ Conclusion / communication :
 )
 clipboard = %stringCaseTemplate%
 return
-
 
 
 ; sub case internalional script
@@ -1024,10 +1008,8 @@ clipboard = %stringsubdtvalgeem%
 return
 
 
-
-
-
 ; NP GUI
+
 MultiNP(){
 Gui, Destroy
 Gui, add, Text,, Alle NP Templates:
@@ -1043,6 +1025,7 @@ Gui, Add, Button, gLOAFR, Letter of agreement FR
 Gui, Add, Button, gMultiticket, Ga terug
 Gui, Show
 }
+
 
 ; NP template
 
@@ -1166,7 +1149,6 @@ clipboard = %stringRejectadres%
 return
 
 
-
 ; Duedatenew
 
 Duedatenew(){
@@ -1271,10 +1253,7 @@ Van zodra de status op RFS sent staat, is de nummerportering volledig afgehandel
 clipboard = %stringddexec%
 return
 
-; LOANL{
-::;LOANL::
-LOANL()
-return
+; LOANL
 
 LOANL(){
 CheckOutlook()
@@ -1307,12 +1286,8 @@ t1LOA1 =
 MailFromTest(subloa, t1LOA1, "technischehulp@telenetgroup.be", "", "technischehulp@telenetgroup.be")
 }
 
-	;}
 
-; LOAFR{
-::;LOAFR::
-LOAFR()
-return
+; LOAFR
 
 LOAFR(){
 CheckOutlook()
@@ -1345,10 +1320,10 @@ t1LOA2 =
 )
 MailFromTest(subloa2, t1LOA2, "technischehulp@telenetgroup.be", "", "technischehulp@telenetgroup.be")
 }
-;}
 
 
-; Mails GUI{
+; Mails GUI
+
 Multimail(){
 Gui, Destroy
 Gui, add, Text,, Algemeen
@@ -1360,31 +1335,19 @@ Gui, Add, Button, gIMmail, melding mail IM
 Gui, Add, Button, gMultiticket, Ga terug
 Gui, Show
 }
-; }
-
-; Mail Shortcuts scripts {
-	
 
 
-
-
+; Mail Shortcuts scripts 
 
 T1Viol:
 T1violation()
 return
 
 
+; Mail full scripts 
 
 
-; }
-
-
-; Mail full scripts {
-
-
-; T1 violation{
-T1violation()
-return
+; T1 violation
 
 T1violation(){
 CheckOutlook()
@@ -1410,12 +1373,8 @@ t1viol =
 MailFromTest(subt1, t1viol, "technischehulp@telenetgroup.be", "", "technischehulp@telenetgroup.be")
 }
 
-	;}
 
-; OLO{
-::;OLO::
-OLO()
-return
+; OLO
 
 OLO(){
 CheckOutlook()
@@ -1440,10 +1399,7 @@ MailFromTest(subolo1, t1olo, "Telenet_NP@telenetgroup.be", "", "Telenet_NP@telen
 }
 
 	
-; OLOPX{
-::;OLOPX::
-OLOPX()
-return
+; OLOPX
 
 OLOPX(){
 CheckOutlook()
@@ -1465,12 +1421,9 @@ t1olopx =
 )
 MailFromTest(subolopx, t1olopx, "Telenet_NP@telenetgroup.be", "car_np@proximus.com", "Telenet_NP@telenetgroup.be")
 }
-;}
 
-; mailvade{
-::;mailvade::
-mailvade()
-return
+
+; mailvade
 
 mailvade(){
 CheckOutlook()
@@ -1506,10 +1459,7 @@ MailFromTest(subolopx, t1olopx, "", "support@vadesecure.com", "")
 }
 
 
-; IMmail{
-::;IMmail::
-IMmail()
-return
+; IMmail
 
 IMmail(){
 Gui, Destroy
@@ -1577,18 +1527,9 @@ rbodimail1 =
 )
 MailFromTest(subimmail2, rbodimail1 ,"D_Broadband.Services@telenetgroup.be", "TBOincidentmanagement@telenetgroup.be", "")
 }
-;}
 
 
-
-
-
-
-
-	
-;}
-
-; Run Outlook script{
+; Run Outlook script
 	; MAILS 
 
 CheckOutlook(){
@@ -1624,7 +1565,6 @@ run, %A_ScriptFullPath%
 
 MailFromTestNoRun(mailsubject, mailbody, ccmail, tomail, frommail){
 
-
 sender := "Telenetmobile@telenetgroup.be"
 olMailItem := 0
 MailItem := ComObjActive("Outlook.Application").CreateItem(olMailItem)
@@ -1637,9 +1577,7 @@ MailItem.HTMLBody := mailbody
 MailItem.Display
 }
 
-
 MailToTest(mailsubject, mailbody, ccmail, tomail) {
-
 
 sender := "Telenetmobile@telenetgroup.be"
 olMailItem := 0
@@ -1656,21 +1594,13 @@ MailItem.Subject := mailsubject
 MailItem.HTMLBody := mailbody
 
 ;****************************** 
-;~ MailItem.Attachments.Add(NewFile)
+
 MailItem.Display ;Make email visible
 run, %A_ScriptFullPath%
-;~ mailItem.Close(0) ;Creates draft version in default folder
-; MailItem.Send() ;Sends the email
 }
-
-::;testmail:: ;hotkey for running below
-MAilTest("hello", "World", "this")
-return
 	
-	
-;}
 
-; Datum 2 dagen verder {
+; Datum 2 dagen verder
 DateFurther()
 {
 TodayName=%A_DDDD%
@@ -1708,9 +1638,10 @@ Date += %AddMe%, Days
 FormatTime, nDate, %Date%, yyMMdd
 return %nDate%
 }	
-;}
 
-; providercheck {
+
+; providercheck 
+
 	CheckPBProvider(checkcase){
 
 if checkcase = 
@@ -1748,9 +1679,9 @@ providercheck = bo.services.and.network.support@telenetgroup.be
 return providercheck
 }
 }
-;}
 
-; 04 to 324 {
+
+; 04 to 324 
 	^;::
 c = %clipboard%
 
@@ -1762,10 +1693,10 @@ else
   c = 0%c%
 }
 clipboard = %c%
-return
-;}	
+return	
 
-; Date 7 dagen {
+
+; Date 7 dagen 
 	
 	Date7()
 {
@@ -1801,13 +1732,6 @@ Date := A_Now
 FormatTime, nDate, %Date%, dd-MM-yyyy HH:mm 
 return %nDate%
 }
-;}
-	
-
-;}
-
-
-
 
 
 ; HOTKEY INFO {
@@ -1817,7 +1741,3 @@ WinMove, info, , 250, 250  ; Move the splash window to the top left corner.
 MsgBox, Press OK to close the info popup
 SplashTextOff
 }
-	
-;}
-
-

@@ -130,7 +130,7 @@ TBOBB%coos% / %order% / %case%
 - Productid: %msisdn%
 - Screen: %ostat%
 - Taken steps:
-  %pstat%
+%pstat%
 >>> Error appears : %error%
 
 Can you solve this please?
@@ -138,7 +138,6 @@ Thank you!
  
 Kind Regards
 TBO
-
 )
 clipboard = %stringmob%
 return
@@ -148,8 +147,7 @@ return
 
 creation(){
 Gui, Destroy
-Gui, add, Text,, COOS?
-Gui, Add, Edit, vcoos, 
+Gui, Add, Checkbox,vcoos, COOS?
 Gui, add, Text,, Probleem:
 Gui, Add, Edit, vorder, 
 Gui, add, Text,, Klantnummer:
@@ -172,8 +170,14 @@ Gui, Show
 Copymob1:
 Gui, Submit, NoHide
 
-ifEqual, coos, COOS
-coos = / COOS
+if (coos = 1)
+{ 
+coos := " / COOS"
+}
+else
+{
+coos := ""
+}
 
 stringmob1 = 
 (
@@ -184,14 +188,14 @@ TBOBB %coos% / %order% / %case%
 - Screen: %stat%
 - Composite order ID: %netcracker%
 - Taken steps: 
-  %steps%
+%steps%
 >>> Error appears : %error%
-- Please can you solve this? 
+
+Can you solve this please? 
 Thank you!
  
 Kind Regards
 TBO
-
 )
 
 clipboard = %stringmob1%
@@ -202,8 +206,7 @@ return
 
 overname(){
 Gui, Destroy
-Gui, add, Text,, COOS?
-Gui, Add, Edit, vcoos, 
+Gui, Add, Checkbox,vcoos, COOS?
 Gui, add, Text,, Order status:
 Gui, Add, Edit, vostat,
 Gui, add, Text,,Proces + Status:
@@ -232,8 +235,14 @@ Gui, Show
 Copytake:
 Gui, Submit, NoHide
 
-ifEqual, coos, COOS
-coos = / COOS
+if (coos = 1)
+{ 
+coos := " / COOS"
+}
+else
+{
+coos := ""
+}
 
 stringmob = 
 (
@@ -253,12 +262,11 @@ Can you replace the data in NSIC?
 - TVOTT : %tvott%
 
 
-Please can you solve this? 
+Can you solve this please?
 Thank you!
  
 Kind Regards
 TBO
-
 )
 
 clipboard = %stringmob%
@@ -269,8 +277,7 @@ return
 
 telenet(){
 Gui, Destroy
-Gui, add, Text,, COOS:
-Gui, Add, Edit, vmcoos, 
+Gui, Add, Checkbox,vcoos, COOS?
 Gui, add, Text,, Probleemomschrijving:
 Gui, Add, Edit, vmproblem, 
 Gui, add, Text,, Klantnummer:
@@ -291,8 +298,14 @@ Gui, Show
 Copymnp:
 Gui, Submit, NoHide
 
-ifEqual, mcoos, COOS
-mcoos = / COOS
+if (coos = 1)
+{ 
+coos := " / COOS"
+}
+else
+{
+coos := ""
+}
 
 
 stringmnp = 
@@ -306,7 +319,7 @@ TBOBB %mcoos% / %mproblem% / %mcaseid%
   %msteps%
 - Error message: %merr%
 
-Please can you solve this?
+Can you solve this please?
 Thank you!
  
 Kind Regards TBO

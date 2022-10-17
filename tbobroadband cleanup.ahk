@@ -24,11 +24,35 @@ Gui, Add, Button, gMulticafe, IT tickets templates
 Gui, Add, Button, gMultiCase, Casetemplate
 Gui, Add, Button, gMultiSMS, Alle SMS
 Gui, Add, Button, gMultimail, Mails
+Gui, Add, Button, gTrunkBox, Trunkboxen
 Gui, Add, Button, gMultiNP, NP
 Gui, Add, Button, gVadeSpam, Spamcause zoeken in putty
 Gui, Show
 }
 
+
+; Trunk script
+TrunkBox(){
+Gui, Destroy
+Gui, Add, Text,,Operator:
+Gui, Add, DropDownList,vOperator,Proximus Fix||Proximus Mob|Orange Mob|Base Mob|Telenet Mob
+Gui, Add, Text,,Telefoonnummer:
+Gui, Add, Edit,vNummer
+Gui, Add, Button, gCopytrunk, COPY
+Gui, Add, Button, gClose, CLOSE
+Gui, Show
+}
+
+Copytrunk:
+Gui, Submit, Nohide
+stringtrunk =
+(
+%Operator%%Nummer%
+)
+
+
+
+; putty script
 
 vadespam(){
 Gui, Destroy

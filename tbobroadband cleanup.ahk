@@ -32,6 +32,7 @@ Gui, Show
 
 
 ; Trunk script
+
 TrunkBox(){
 Gui, Destroy
 Gui, Add, Text,,Operator:
@@ -45,11 +46,33 @@ Gui, Show
 
 Copytrunk:
 Gui, Submit, Nohide
+if (Operator = "Proximus Fix")
+{
+prefix = +329912
+}
+else if (Operator = "Proximus Mob")
+{
+prefix = +3299123
+}
+else if (Operator = "Orange Mob")
+{
+prefix = +3299122
+}
+else if (Operator = "Base Mob")
+{
+prefix = +3299121
+}
+else if (Operator = "Telenet Mob")
+{
+prefix = +3299124
+}
+
 stringtrunk =
 (
-%Operator%%Nummer%
+%prefix%%Nummer%
 )
-
+clipboard = %stringtrunk%
+return
 
 
 ; putty script
